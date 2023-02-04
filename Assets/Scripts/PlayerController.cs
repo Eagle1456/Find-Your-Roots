@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float playerSpeed;
 
     private Rigidbody2D rb;
-    private bool grounded;
+    public bool grounded { get; private set; }
     private float multiplier = 30; 
     private float dx;
     // Start is called before the first frame update

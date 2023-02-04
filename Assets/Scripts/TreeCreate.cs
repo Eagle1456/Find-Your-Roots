@@ -8,17 +8,23 @@ public class TreeCreate : MonoBehaviour
     Grid grid;
 
     [SerializeField]
-    GameObject tree;
+    private GameObject tree;
+
+    [SerializeField]
+    private TreeTriggerBox trigger;
+
+    [SerializeField]
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.H) && !trigger.IsTouching && player.grounded)
         {
             SetTreeToPlayer();
         }

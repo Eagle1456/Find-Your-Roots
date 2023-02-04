@@ -12,15 +12,12 @@ public class TreeTriggerBox : MonoBehaviour
     [SerializeField]
     Transform player;
 
+    public bool IsTouching { get; private set; }
+
     private void Start()
     {
+        IsTouching = false;
         InvokeRepeating("ResetPos", 0f, .5f);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
-        
     }
 
     void ResetPos()
@@ -29,7 +26,18 @@ public class TreeTriggerBox : MonoBehaviour
         Vector3Int treePos = new Vector3Int((int)Mathf.Floor(playerPos.x), (int)Mathf.Floor(playerPos.y), (int)Mathf.Floor(playerPos.z));
         Vector3 cellPos = grid.GetCellCenterLocal(treePos);
         this.transform.position = cellPos;
+        
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        IsTouching = true;
+        Debug.Log("Touching!");
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        IsTouching = false;
+        Debug.Log("No longer Touching!");
+    }
 }
