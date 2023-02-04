@@ -24,9 +24,14 @@ public class TreeCreate : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H) && !trigger.IsTouching && player.grounded)
+        if (Input.GetKeyDown(KeyCode.J)  && player.grounded)
         {
             SetTreeToPlayer();
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            NewTree.TreeEvent?.Invoke();
         }
     }
     void SetTreeToPlayer()
