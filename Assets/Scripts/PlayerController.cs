@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         dx = multiplier / 2 * playerSpeed * Input.GetAxis ("Horizontal") * Time.fixedDeltaTime;
 
-        if (grounded && Input.GetKey("space")) {
+        if (rb.velocity.y == 0 && grounded && Input.GetAxis ("Vertical") > 0) {
             rb.AddForce(transform.up * multiplier * playerSpeed);
         }
         
