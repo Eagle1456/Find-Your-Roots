@@ -472,5 +472,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text Block
       objectReference: {fileID: 0}
+    - target: {fileID: 523059636547332451, guid: 32983cd74e2c8564cb6a11d6b19c1a4a, type: 3}
+      propertyPath: m_text
+      value: New text
+      objectReference: {fileID: 0}
+    - target: {fileID: 523059636547332451, guid: 32983cd74e2c8564cb6a11d6b19c1a4a, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32983cd74e2c8564cb6a11d6b19c1a4a, type: 3}
