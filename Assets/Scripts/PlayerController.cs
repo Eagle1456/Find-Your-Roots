@@ -36,4 +36,9 @@ public class PlayerController : MonoBehaviour
         
         rb.velocity = new Vector2(dx, rb.velocity.y);
     }
+
+    public void InvokeTree()
+    {
+        NewTree.TreeEvent.Invoke();
+    }
 }
