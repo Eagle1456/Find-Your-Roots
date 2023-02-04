@@ -14,13 +14,19 @@ public class TreeCreate : MonoBehaviour
     void Start()
     {
 
-        SetTreeToPlayer();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SetTreeToPlayer();
+        }
+    }
     void SetTreeToPlayer()
     {
         Vector3 playerPos = this.transform.position;
-        Vector3Int treePos = new Vector3Int((int) Mathf.Round(playerPos.x), (int) Mathf.Round(playerPos.y), (int) Mathf.Round(playerPos.z));
+        Vector3Int treePos = new Vector3Int(Mathf.FloorToInt(playerPos.x), (int) Mathf.FloorToInt(playerPos.y), (int) Mathf.FloorToInt(playerPos.z));
         Vector3 cellPos = grid.GetCellCenterWorld(treePos);
         GameObject NewTree = Instantiate(tree, cellPos, Quaternion.identity);
     }
