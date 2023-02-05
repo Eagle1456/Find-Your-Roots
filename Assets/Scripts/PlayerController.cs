@@ -57,9 +57,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // print (grounded && rb.velocity.y <= 0.001f);
-        
         dx = multiplier / 2 * playerSpeed * Input.GetAxis ("Horizontal") * Time.fixedDeltaTime;
-        if (grounded && rb.velocity.y == 0.0f){
+
+        Debug.Log(rb.velocity.y);
+        if (grounded && rb.velocity.y <= 0.0001f){
             if (Input.GetAxis ("Vertical") > 0) {
                 rb.AddForce(transform.up * multiplier * playerSpeed);
             } 

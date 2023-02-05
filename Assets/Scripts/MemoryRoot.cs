@@ -30,6 +30,7 @@ public class MemoryRoot : MonoBehaviour
 
     public void ClosePanel()
     {
+        Debug.Log("Clicked!");
         panel.SetActive(false);
         button.onClick.RemoveAllListeners();
         textBlock.text = "";
