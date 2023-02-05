@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float playerSpeed;
     public TreeCreate tree;
     private Rigidbody2D rb;
-    public bool grounded { get; private set; }
-    private bool touchingtree = false;
+    public bool grounded = false;
+    public bool touchingtree = false;
     private bool makingseed = false;
     private float multiplier = 30; 
     private float dx;
@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
         tree = gameObject.GetComponent<TreeCreate>();
         dx = 0;
         seeds = 0;
-        grounded = true;
     }
 
     IEnumerator seedPlace ()
@@ -53,27 +52,12 @@ public class PlayerController : MonoBehaviour
         seeds = 0;
     }
 
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("ground")){
-            grounded = true;
-        }
-        if (other.transform.CompareTag("Tree")) {
-            touchingtree = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other){
-        if (other.CompareTag("ground")){
-            grounded = false;
-        }
-        if (other.transform.CompareTag("Tree")) {
-            touchingtree = false;
-        }
-    }
+    
     // Update is called once per frame
     void FixedUpdate()
     {
         // print (grounded && rb.velocity.y <= 0.001f);
+        
         dx = multiplier / 2 * playerSpeed * Input.GetAxis ("Horizontal") * Time.fixedDeltaTime;
         if (grounded && rb.velocity.y == 0.0f){
             if (Input.GetAxis ("Vertical") > 0) {
@@ -85,7 +69,6 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        print (grounded && !touchingtree);
         if (grounded && rb.velocity.y == 0.0f && !touchingtree && Input.GetAxis ("Vertical") < 0 && !makingseed) {
             StartCoroutine(seedPlace());
         }
