@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] public float playerSpeed;
-
+    public TreeCreate tree;
     private Rigidbody2D rb;
     public bool grounded { get; private set; }
     private float multiplier = 30; 
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        tree = gameObject.GetComponent<TreeCreate>();
         dx = 0;
     }
 
@@ -28,7 +29,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void NextGen() {
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x, -3);
+        tree.SetTreeToPlayer();
         gameObject.transform.position = new Vector2(-10, -3);
+        rb.velocity = new Vector2(0,0);
     }
 
     void OnTriggerEnter2D(Collider2D other){

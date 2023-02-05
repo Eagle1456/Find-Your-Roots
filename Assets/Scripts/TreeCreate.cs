@@ -41,7 +41,7 @@ public class TreeCreate : MonoBehaviour
             GameManager.Instance.ResetGame();
         }
     }
-    void SetTreeToPlayer()
+    public void SetTreeToPlayer()
     {
         Vector3 playerPos = this.transform.position;
         Vector3Int treePos = new Vector3Int(Mathf.FloorToInt(playerPos.x), (int) Mathf.FloorToInt(playerPos.y), (int) Mathf.FloorToInt(playerPos.z));
