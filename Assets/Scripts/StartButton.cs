@@ -12,7 +12,7 @@ public class StartButton : MonoBehaviour
         
     }
 
-    void OnClick() {
+    public void OnClick() {
         SceneManager.LoadScene(scene); 
     }
 
