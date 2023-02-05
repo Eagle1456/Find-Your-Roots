@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] public float playerSpeed;
     public TreeCreate tree;
+    private AnimatorController a;
     private Rigidbody2D rb;
     public bool grounded = false;
     public bool touchingtree = false;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         tree = gameObject.GetComponent<TreeCreate>();
+        a = gameObject.GetComponent<AnimatorController>();
         dx = 0;
         seeds = 0;
     }
