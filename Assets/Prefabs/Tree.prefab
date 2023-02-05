@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeOffset: 2
+  rootOffset: 1
   tree: {fileID: 3186810733855588362}
+  root: {fileID: 4385910555859935424, guid: eeae2c3f32b29cd46aaa1735114d020c, type: 3}
+  isSapling: 0
 --- !u!61 &-8289171817285869175
 BoxCollider2D:
   m_ObjectHideFlags: 0

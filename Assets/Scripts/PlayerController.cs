@@ -51,6 +51,13 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(dx, rb.velocity.y);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            NewTree.TreeEvent.Invoke();
+        }
+    }
     public void InvokeTree()
     {
         NewTree.TreeEvent.Invoke();
