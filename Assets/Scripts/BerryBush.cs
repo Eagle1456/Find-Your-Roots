@@ -5,9 +5,6 @@ using UnityEngine.Events;
 
 public class BerryBush : MonoBehaviour
 {
-
-    public UnityEvent nextGen;
-    public UnityEvent TreeEvent;
     private bool touchingPlayer = false;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +29,7 @@ public class BerryBush : MonoBehaviour
     void Update()
     {
         if (touchingPlayer && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.E))){
-            TreeEvent.Invoke();
+            NewTree.TreeEvent.Invoke();
             PlayerController.nextGen.Invoke();
         } 
     }
