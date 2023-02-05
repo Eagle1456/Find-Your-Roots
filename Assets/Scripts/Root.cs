@@ -26,10 +26,10 @@ public class Root : MonoBehaviour
             Vector3 newTreePos = Vector3.zero;
             switch (rootDirection){
                 case RootDir.LEFT:
-                    newTreePos = new Vector3(transform.position.x + rootOffset, transform.position.y);
+                    newTreePos = new Vector3(transform.position.x - rootOffset, transform.position.y);
                     break;
                 case RootDir.RIGHT:
-                    newTreePos = new Vector3(transform.position.x - rootOffset, transform.position.y);
+                    newTreePos = new Vector3(transform.position.x + rootOffset, transform.position.y);
                     break;
                 default:
                     Debug.LogError("You fucked up");

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 117455657640738504}
   - component: {fileID: 117455657640738509}
   - component: {fileID: 117455657640738508}
+  - component: {fileID: 3095934865339793490}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -146,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 11
+  tree: {fileID: 3095934865339793490}
+  seeds: 1
 --- !u!70 &117455657640738508
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +165,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &3095934865339793490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117455657640738506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3332784722434a43831a88d9923d37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  tree: {fileID: 2515979678220292185, guid: 471117826849518408401456eebf5675, type: 3}
+  trigger: {fileID: 0}
+  player: {fileID: 117455657640738509}
