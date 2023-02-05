@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool grounded { get; private set; }
     private float multiplier = 30; 
     private float dx;
+    public int seeds = 1;
     public static UnityEvent nextGen = new UnityEvent();
     // Start is called before the first frame update
     void Start()
@@ -47,10 +48,18 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         dx = multiplier / 2 * playerSpeed * Input.GetAxis ("Horizontal") * Time.fixedDeltaTime;
-
-        if (rb.velocity.y == 0 && grounded && Input.GetAxis ("Vertical") > 0) {
-            rb.AddForce(transform.up * multiplier * playerSpeed);
+        if (rb.velocity.y == 0 && grounded){
+            if (Input.GetAxis ("Vertical") > 0) {
+                
+                rb.AddForce(transform.up * multiplier * playerSpeed);
+            } else if (Input.GetAxis ("Vertical") < 0) {
+                if (seeds>0) {
+                    tree.SetTreeToPlayer();
+                    --seeds;
+                }
+            }
         }
+
         
         rb.velocity = new Vector2(dx, rb.velocity.y);
     }
