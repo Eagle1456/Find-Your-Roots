@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         dx = multiplier / 2 * playerSpeed * Input.GetAxis ("Horizontal") * Time.fixedDeltaTime;
 
         Debug.Log(rb.velocity.y);
-        if (grounded && rb.velocity.y <= 0.0001f){
+        if (grounded && rb.velocity.y <= 0.00001f){
             if (Input.GetAxis ("Vertical") > 0) {
                 rb.AddForce(transform.up * multiplier * playerSpeed);
             } 

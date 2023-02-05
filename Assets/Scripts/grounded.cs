@@ -13,9 +13,8 @@ public class grounded : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("ground")){
+        // if (other.CompareTag("ground")){
             p.grounded = true;
-        }
         if (other.transform.CompareTag("Tree")) {
             p.touchingtree = true;
         }
@@ -28,6 +27,7 @@ public class grounded : MonoBehaviour
         if (other.transform.CompareTag("Tree")) {
             p.touchingtree = false;
         }
+        p.grounded = false;
     }
     // Update is called once per frame
     void Update()
