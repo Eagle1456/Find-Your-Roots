@@ -6,6 +6,10 @@ using TMPro;
 
 public class MemoryRoot : MonoBehaviour
 {
+
+    [SerializeField]
+    private bool isEnd = false;
+
     [SerializeField]
     private GameObject panel;
 
@@ -32,8 +36,17 @@ public class MemoryRoot : MonoBehaviour
     {
         Debug.Log("Clicked!");
         panel.SetActive(false);
-        button.onClick.RemoveAllListeners();
+        if (!isEnd)
+        {
+            button.onClick.RemoveAllListeners();
+        }
         textBlock.GetComponent<TextMeshProUGUI>().text = "";
+    }
+
+    public void EndScript()
+    {
+        button.onClick.RemoveAllListeners();
+        Application.Quit();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +59,12 @@ public class MemoryRoot : MonoBehaviour
             panel.SetActive(true);
             textBlock.SetActive(true);
             button.onClick.AddListener(ClosePanel);
+            if(isEnd)
+            {
+                button.onClick.AddListener(EndScript);
+            }
             textBlock.GetComponent<TextMeshProUGUI>().text = text;
+
         }
     }
 }
