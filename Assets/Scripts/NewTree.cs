@@ -31,6 +31,9 @@ public class NewTree : MonoBehaviour
 
     private void CreateTree()
     {
+        if (isSapling) {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
         if (!createdTree)
         {
             Vector3 newTreePos = new Vector3(transform.position.x, transform.position.y + treeOffset);
@@ -39,8 +42,8 @@ public class NewTree : MonoBehaviour
         }
         else if (isSapling)
         {
-            Vector3 newTreePosR = new Vector3(transform.position.x + rootOffset, transform.position.y - 1 );
-            Vector3 newTreePosL = new Vector3(transform.position.x - rootOffset, transform.position.y - 1);
+            Vector3 newTreePosR = new Vector3(transform.position.x + rootOffset, transform.position.y - .5f);
+            Vector3 newTreePosL = new Vector3(transform.position.x - rootOffset, transform.position.y - .5f);
 
             GameObject root1 = Instantiate(root, newTreePosL, Quaternion.identity);
             root1.GetComponent<Root>().rootDirection = Root.RootDir.LEFT;
