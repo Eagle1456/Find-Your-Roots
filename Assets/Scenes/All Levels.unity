@@ -20881,17 +20881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1269544937 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 523059636547332451, guid: 32983cd74e2c8564cb6a11d6b19c1a4a, type: 3}
-  m_PrefabInstance: {fileID: 1269544934}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1269544938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 523059635338632402, guid: 32983cd74e2c8564cb6a11d6b19c1a4a, type: 3}
@@ -26883,6 +26872,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1589019714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 523059636547332453, guid: 32983cd74e2c8564cb6a11d6b19c1a4a, type: 3}
+  m_PrefabInstance: {fileID: 1269544934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1636327511
 GameObject:
   m_ObjectHideFlags: 0
@@ -27109,7 +27103,7 @@ PrefabInstance:
     - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
       propertyPath: textBlock
       value: 
-      objectReference: {fileID: 1269544937}
+      objectReference: {fileID: 1589019714}
     - target: {fileID: 2152061588902746761, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
       propertyPath: m_Name
       value: MemoryRoot

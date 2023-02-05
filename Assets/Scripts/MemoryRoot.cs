@@ -13,7 +13,7 @@ public class MemoryRoot : MonoBehaviour
     private Button button;
 
     [SerializeField]
-    private TextMeshProUGUI textBlock;
+    private GameObject textBlock;
 
     [SerializeField]
     [TextArea(15, 20)]
@@ -33,7 +33,7 @@ public class MemoryRoot : MonoBehaviour
         Debug.Log("Clicked!");
         panel.SetActive(false);
         button.onClick.RemoveAllListeners();
-        textBlock.text = "";
+        textBlock.GetComponent<TextMeshProUGUI>().text = "";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,9 +44,9 @@ public class MemoryRoot : MonoBehaviour
             boxCollider.enabled = false;
 
             panel.SetActive(true);
-            textBlock.gameObject.SetActive(true);
+            textBlock.SetActive(true);
             button.onClick.AddListener(ClosePanel);
-            textBlock.text = text;
+            textBlock.GetComponent<TextMeshProUGUI>().text = text;
         }
     }
 }
