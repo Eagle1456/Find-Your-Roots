@@ -44,8 +44,8 @@ public class TreeCreate : MonoBehaviour
     public void SetTreeToPlayer()
     {
         Vector3 playerPos = this.transform.position;
-        Vector3Int treePos = new Vector3Int(Mathf.FloorToInt(playerPos.x), Mathf.FloorToInt(playerPos.y), (int) Mathf.FloorToInt(playerPos.z));
-        Vector3 cellPos = grid.GetCellCenterWorld(treePos);
-        GameObject NewTree = Instantiate(tree, cellPos, Quaternion.identity);
+        Vector3 treePos = new Vector3(playerPos.x, playerPos.y-.34f, playerPos.z);
+        // Vector3 cellPos = grid.GetCellCenterWorld(treePos);
+        GameObject NewTree = Instantiate(tree, treePos, Quaternion.identity);
     }
 }

@@ -42,8 +42,8 @@ public class NewTree : MonoBehaviour
         }
         else if (isSapling)
         {
-            Vector3 newTreePosR = new Vector3(transform.position.x + rootOffset, transform.position.y - .5f);
-            Vector3 newTreePosL = new Vector3(transform.position.x - rootOffset, transform.position.y - .5f);
+            Vector3 newTreePosR = new Vector3(transform.position.x + rootOffset, transform.position.y - .4f);
+            Vector3 newTreePosL = new Vector3(transform.position.x - rootOffset, transform.position.y - .4f);
 
             GameObject root1 = Instantiate(root, newTreePosL, Quaternion.identity);
             root1.GetComponent<Root>().rootDirection = Root.RootDir.LEFT;
