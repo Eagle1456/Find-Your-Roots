@@ -38,6 +38,6 @@ public class NewTree : MonoBehaviour
 
     private void OnDisable()
     {
-        TreeEvent.AddListener(CreateTree);
+        TreeEvent.RemoveListener(CreateTree);
     }
 }

@@ -4,20 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public static GameManager Instance { get; private set; }
+
+    [SerializeField]
+    private Vector3 startPos;
+
+    [SerializeField]
+    private GameObject player;
+
+    private void Awake()
     {
-        
+        if (Instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetGame()
     {
-        
-    }
+        player.transform.SetPositionAndRotation(startPos, Quaternion.identity);
 
-    public void DestroyAllTrees()
-    {
         GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
         
         foreach (GameObject tree in trees)
@@ -25,4 +36,6 @@ public class GameManager : MonoBehaviour
             Destroy(tree);
         }
     }
+
+    
 }
