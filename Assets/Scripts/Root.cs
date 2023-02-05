@@ -38,6 +38,10 @@ public class Root : MonoBehaviour
             }
             GameObject newRoot = Instantiate(root, newTreePos, Quaternion.identity);
             newRoot.GetComponent<Root>().rootDirection = rootDirection;
+            if (rootDirection == RootDir.LEFT)
+            {
+                newRoot.transform.Rotate(Vector3.up, 180);
+            }
             createdRoot = true;
         }
 
