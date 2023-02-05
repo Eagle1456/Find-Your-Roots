@@ -340,6 +340,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
+      propertyPath: text
+      value: "\u201CTo you who has reached this place, I congratulate you. You have
+        finally reached the gift that your ancestors sought for. As for what the
+        gift is, look around you. The sacrifices that your family has made created
+        this lush and dense forest. The goal was never eternal life, rather it was
+        continuation of life after death. Use this gift wisely as a safe haven against
+        forces that seek you harm.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
+      propertyPath: isEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
       propertyPath: panel
       value: 
       objectReference: {fileID: 1269544938}
@@ -483,6 +496,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
+      propertyPath: text
+      value: "\u201CAlmost there. Ever since the war ended, I\u2019ve been searching
+        for this treasure. I\u2019ve lost so many of my brothers and sisters, and
+        I ask if it was worth all this bloodshed. I need this secret eternal happiness
+        to fill what has been lost in my soul. Huh, I guess somebody has been busy
+        planting trees\u2026\u201D"
+      objectReference: {fileID: 0}
     - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
       propertyPath: isEnd
       value: 1
@@ -24624,6 +24645,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
+      propertyPath: text
+      value: "\u201CJust a little longer, come on! I need to get this treasure! When
+        that mystical being told me that eternal happiness would be granted, I had
+        to find it. I just have to cross this dry plain! My family has been oppressed
+        for as long as we can remember. There may be a chance that it doesn\u2019t
+        exist, but I can\u2019t think of that. For myself, for my family, and for
+        my people, I must find it!\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
       propertyPath: panel
       value: 
       objectReference: {fileID: 1269544938}
@@ -26293,6 +26323,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
+      propertyPath: text
+      value: "\u201CTomorrow, I embark into the forest. It\u2019s said that there\u2019s
+        a secret treasure deep within. What this treasure is, I do not know. However,
+        I do know it is said to bring eternal happiness. My father told me this,
+        and his father told him this. My family has been searching for this treasure
+        for as long as time, and I wonder why\u2026\u201D"
+      objectReference: {fileID: 0}
     - target: {fileID: 2152061588902746760, guid: fc20300ba9ca4244fb408578ddcc4623, type: 3}
       propertyPath: panel
       value: 
