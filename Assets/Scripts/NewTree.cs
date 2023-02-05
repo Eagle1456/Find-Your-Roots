@@ -47,6 +47,7 @@ public class NewTree : MonoBehaviour
 
             GameObject root1 = Instantiate(root, newTreePosL, Quaternion.identity);
             root1.GetComponent<Root>().rootDirection = Root.RootDir.LEFT;
+            root1.transform.Rotate(Vector3.up, 180);
             GameObject root2 = Instantiate(root, newTreePosR, Quaternion.identity);
             root2.GetComponent<Root>().rootDirection = Root.RootDir.RIGHT;
 
