@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
         tree = gameObject.GetComponent<TreeCreate>();
         dx = 0;
         seeds = 3;
+        grounded = true;
     }
 
     IEnumerator seedPlace ()
@@ -53,19 +54,26 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        grounded = true;
+        if (other.CompareTag("ground")){
+            grounded = true;
+        }
         if (other.transform.CompareTag("Tree")) {
             touchingtree = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other){
-        grounded = false;
-        touchingtree = false;
+        if (other.CompareTag("ground")){
+            grounded = false;
+        }
+        if (other.transform.CompareTag("Tree")) {
+            touchingtree = false;
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
     {
+        // print (grounded && rb.velocity.y <= 0.001f);
         dx = multiplier / 2 * playerSpeed * Input.GetAxis ("Horizontal") * Time.fixedDeltaTime;
         if (grounded && rb.velocity.y == 0.0f){
             if (Input.GetAxis ("Vertical") > 0) {
