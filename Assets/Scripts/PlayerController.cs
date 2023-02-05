@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,11 +11,24 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
     private float multiplier = 30; 
     private float dx;
+    public static UnityEvent nextGen = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         dx = 0;
+    }
+
+    void OnEnable () {
+        nextGen.AddListener(NextGen);
+    }
+    
+    void OnDisable () {
+        nextGen.RemoveListener(NextGen);
+    }
+
+    void NextGen() {
+        gameObject.transform.position = new Vector2(-10, -3);
     }
 
     void OnTriggerEnter2D(Collider2D other){
