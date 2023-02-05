@@ -75,9 +75,6 @@ public class PlayerController : MonoBehaviour
         if (grounded && rb.velocity.y == 0.0f && !touchingtree && Input.GetAxis ("Vertical") < 0 && !makingseed) {
             StartCoroutine(seedPlace());
         }
-        if (Input.GetKeyDown(KeyCode.O)) {
-            InvokeTree();
-        }
     }
     public void InvokeTree()
     {
