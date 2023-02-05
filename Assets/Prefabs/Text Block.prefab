@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4528302, g: 0.3299738, b: 0.14781062, a: 0.392}
+  m_Color: {r: 0.4528302, g: 0.3299738, b: 0.14781062, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -124,8 +124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 1.2602}
-  m_SizeDelta: {x: 595.5087, y: 399.6454}
+  m_AnchoredPosition: {x: -10.0737, y: 44.325195}
+  m_SizeDelta: {x: 1461, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &523059636547332450
 CanvasRenderer:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.38
+  m_fontSize: 53.7
   m_fontSizeBase: 20.38
   m_fontWeight: 400
   m_enableAutoSizing: 0
