@@ -24,4 +24,19 @@ public class seeds : MonoBehaviour
     {
         
     }
+
+    public void Method()
+    {
+        hasSeeds = true;
+    }
+
+    private void OnEnable()
+    {
+        PlayerController.nextGen.AddListener(Method);
+    }
+
+    private void OnDisable()
+    {
+        PlayerController.nextGen.RemoveListener(Method);
+    }
 }
