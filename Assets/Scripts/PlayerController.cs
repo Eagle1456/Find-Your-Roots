@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] public float playerSpeed;
     public TreeCreate tree;
-    private AnimatorController a;
+    private Animator a;
     private Rigidbody2D rb;
     public bool grounded = false;
     public bool touchingtree = false;
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         tree = gameObject.GetComponent<TreeCreate>();
-        a = gameObject.GetComponent<AnimatorController>();
+        a = gameObject.GetComponent<Animator>();
         dx = 0;
         seeds = 0;
     }
@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
             } 
         }
         rb.velocity = new Vector2(dx, rb.velocity.y);
+        a.SetBool("grounded", rb.velocity.y < 0.00001);
+        a.SetFloat("Velocity", dx);
     }
     
     private void Update()
