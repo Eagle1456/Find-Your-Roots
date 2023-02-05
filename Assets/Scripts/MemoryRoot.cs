@@ -43,9 +43,9 @@ public class MemoryRoot : MonoBehaviour
             boxCollider.enabled = false;
 
             panel.SetActive(true);
+            textBlock.gameObject.SetActive(true);
             button.onClick.AddListener(ClosePanel);
             textBlock.text = text;
-            textBlock.gameObject.SetActive(true);
         }
     }
 }

@@ -17,6 +17,7 @@ public class Root : MonoBehaviour
     [SerializeField]
     private GameObject root;
 
+    
     private bool createdRoot = false;
 
     private void CreateTree()
