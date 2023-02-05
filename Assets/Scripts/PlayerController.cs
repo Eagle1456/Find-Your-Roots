@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         tree = gameObject.GetComponent<TreeCreate>();
         dx = 0;
-        seeds = 3;
+        seeds = 0;
         grounded = true;
     }
 
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         tree.SetTreeToPlayer();
         gameObject.transform.position = new Vector2(-10, -3);
         rb.velocity = new Vector2(0,0);
-        seeds = 3;
+        seeds = 0;
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -85,7 +85,8 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        if (grounded && !touchingtree && Input.GetAxis ("Vertical") < 0 && !makingseed) {
+        print (grounded && !touchingtree);
+        if (grounded && rb.velocity.y == 0.0f && !touchingtree && Input.GetAxis ("Vertical") < 0 && !makingseed) {
             StartCoroutine(seedPlace());
         }
         if (Input.GetKeyDown(KeyCode.O)) {
