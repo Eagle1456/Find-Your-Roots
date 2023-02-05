@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 public class Thorns : MonoBehaviour
 {
-    public UnityEvent nextGen;
-    public UnityEvent TreeEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +14,7 @@ public class Thorns : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if (other.transform.CompareTag("Player")) {
             //Reset everything for next load
-            TreeEvent.Invoke();
+            NewTree.TreeEvent.Invoke();
             PlayerController.nextGen.Invoke();
         }
     }
