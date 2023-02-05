@@ -46,6 +46,7 @@ public class MemoryRoot : MonoBehaviour
     public void EndScript()
     {
         button.onClick.RemoveAllListeners();
+        Debug.Log("End game!");
         Application.Quit();
     }
 
